@@ -1,2 +1,30 @@
-<h1>Uploads#write</h1>
-<p>Find me in app/views/uploads/write.html.erb</p>
+<div>
+	<% if !flash[:alert].nil? %>
+	<div>
+		<%= flash[:alert] %>
+	</div>
+</div>
+
+<form action="/uplodads/write_complete" method="post">
+	<p> + Dimension
+	<select name="post_dimension">
+		<option value="2D">2D</option>
+		<option value="3D">3D</option>
+	</select></p>
+	<p> + Category
+	<select name="post_category">
+		<option value="illustration">Illustration</option>
+		<option value="web_design">Web Design</option>
+		<option value="brand_identity_design">Brand Identity Design</option>
+		<option value="motion_graphics">Motion Graphics</option>
+		<option value="photography">Photography</option>
+	</select></p>
+	<p> + Type
+	<select name="post_type">
+		<option value="work">Work</option>
+		<option value="personal">Personal</option>
+	</select></p>
+	<p><input type="text" name="post_title" placeholder="Title"></p>
+	<p><textarea name="post_content" placeholder="Content"></textarea></p>
+	<input type="submit" value="Add">
+</form>

@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   get '/:posts_type' => 'uploads#posts_type'
   get 'uploads/show/:id' => 'uploads#show'
   get 'uploads/write'
-  get 'uploads/write_complete'
+  post 'uploads/write_complete'
   get 'uploads/edit'
-  get 'uploads/edit_complete'
-  get 'uploads/delete_complete'
+	post 'uploads/edit_complete'
+  post 'uploads/delete_complete'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

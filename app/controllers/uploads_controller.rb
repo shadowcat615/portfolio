@@ -47,6 +47,19 @@ class UploadsController < ApplicationController
   end
 
   def write_complete
+		post = Post.new
+		post.dimension = params[:post_dimension]
+		post.category = params[:post_category]
+		post.type = params[:post_type]
+		post.title = params[:post_title]
+		post.content = params[:post_content]
+		if post.save
+			flash[:alert] = "Successfully Saved."
+			redirect_to "/uploads/show/#{post.id}"
+		else
+			flash[:alert] = post.errors.values.flatten.join(' ')
+			redirect_to :back
+		end
   end
 
   def edit
