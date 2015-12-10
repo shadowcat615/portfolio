@@ -6,6 +6,7 @@ class CreatePosts < ActiveRecord::Migration
 			t.string :type
 			t.string :title
 			t.string :content
+			t.string :year
 
       t.timestamps null: false
     end

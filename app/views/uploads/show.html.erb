@@ -1,0 +1,13 @@
+<div>
+	<%= if !flash[:alert].nil? %>
+	<div>
+		<%= flash[:alert] %>
+	</div>
+</div>
+
+<div>
+	<h4><%= @post.title %></h4>
+	<p><%= @post.dimension %> <%= @post.category %></p>
+	
+	<p><a href="/">List</a>
+</div>
