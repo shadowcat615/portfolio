@@ -3,11 +3,10 @@ class CreatePosts < ActiveRecord::Migration
     create_table :posts do |t|
 			t.string :dimension
 			t.string :category
-			t.string :type
+			t.string :project
 			t.string :title
 			t.string :content
-			t.string :year
-
+			
       t.timestamps null: false
     end
   end

@@ -1,13 +1,9 @@
 <div>
-	<%= if !flash[:alert].nil? %>
-	<div>
-		<%= flash[:alert] %>
-	</div>
+	<div><img src="<%= @post.image_url(:medium) %>"></div>
+	<h3><%= @post.title %></h3>
+	<h4><%= @post.dimension %> | <%= @post.category %></h4>
+	<p><%= @post.content %></p>
+	<p><a href="/uploads/edit/<%= @post.id %>"/>Edit</a> | <a href="/uploads/delete/<%= @post.id %>">Delete</a></p>
+	<p><a href="/">Go back to the List</a></p>
 </div>
 
-<div>
-	<h4><%= @post.title %></h4>
-	<p><%= @post.dimension %> <%= @post.category %></p>
-	
-	<p><a href="/">List</a>
-</div>

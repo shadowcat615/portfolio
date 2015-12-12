@@ -1,0 +1,11 @@
+<% @posts.reverse.each do |post| %>
+<div>
+	<div><img src="<%= post.image_url(:thumb) %>"></div>
+	<h4><a href="/uploads/show/<%= post.id %>"><%= post.title %></a></h4>
+	<p><%= post.dimension %> <%= post.category %></p>
+	<p><%= post.project %></p>
+	<p><%= post.content %></p>
+</div>
+<% end %>
+
+

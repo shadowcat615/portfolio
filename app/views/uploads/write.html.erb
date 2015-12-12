@@ -1,11 +1,11 @@
-<div>
-	<% if !flash[:alert].nil? %>
-	<div>
-		<%= flash[:alert] %>
-	</div>
-</div>
+<% if !flash[:alert].nil? %>
+<p><%= flash[:alert] %></p>
+<% end %>
 
-<form action="/uplodads/write_complete" method="post">
+<form action="/uploads/write_complete" method="post" enctype="multipart/form-data">
+	<p>+ File
+	<p><input type="file" name="image"><p>
+	</p>
 	<p> + Dimension
 	<select name="post_dimension">
 		<option value="2D">2D</option>
@@ -20,7 +20,7 @@
 		<option value="photography">Photography</option>
 	</select></p>
 	<p> + Type
-	<select name="post_type">
+	<select name="post_project">
 		<option value="work">Work</option>
 		<option value="personal">Personal</option>
 	</select></p>

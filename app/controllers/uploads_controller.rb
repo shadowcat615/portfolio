@@ -29,14 +29,14 @@ class UploadsController < ApplicationController
 		@posts = Post.where(category: @category)
   end
 
-  def posts_type
-		case params[:type]
+  def posts_project
+		case params[:project]
 		when "work"
 			@type = "Work"
 		else 
 			@type = "Personal"
 		end
-		@posts = Post.where(type: @type)
+		@posts = Post.where(project: @project)
   end
 
   def show
@@ -50,9 +50,10 @@ class UploadsController < ApplicationController
 		post = Post.new
 		post.dimension = params[:post_dimension]
 		post.category = params[:post_category]
-		post.type = params[:post_type]
+		post.project = params[:post_project]
 		post.title = params[:post_title]
 		post.content = params[:post_content]
+		post.image = params[:image]
 		if post.save
 			flash[:alert] = "Successfully Saved."
 			redirect_to "/uploads/show/#{post.id}"
@@ -63,11 +64,20 @@ class UploadsController < ApplicationController
   end
 
   def edit
+		@post = Post.find(params[:id])
   end
 
   def edit_complete
+		@post = Post.find(params[:id])
+		@post.destroy
+		flash[:alert] = "Successfully Edited."
+		redirect_to "/"
   end
 
   def delete_complete
+		@post = Post.find(params[:id])
+		@post.destroy
+		flash[:alert] = "Successfully Deleted."
+		redirect_to "/"
   end
 end
