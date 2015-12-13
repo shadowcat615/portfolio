@@ -2,6 +2,10 @@ source 'https://rubygems.org'
 
 # gem 'foundation-rails'
 gem 'carrierwave'
+gem 'carrierwave-mongoid'
+gem 'carrierwave-imageoptimizer'
+gem 'fog'
+# gem 'carrierwave-crop'
 gem 'mini_magick'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

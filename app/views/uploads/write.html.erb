@@ -1,30 +1,28 @@
-<% if !flash[:alert].nil? %>
-<p><%= flash[:alert] %></p>
-<% end %>
-
-<form action="/uploads/write_complete" method="post" enctype="multipart/form-data">
-	<p>+ File
-	<p><input type="file" name="image"><p>
-	</p>
-	<p> + Dimension
-	<select name="post_dimension">
-		<option value="2D">2D</option>
-		<option value="3D">3D</option>
-	</select></p>
-	<p> + Category
-	<select name="post_category">
-		<option value="illustration">Illustration</option>
-		<option value="web_design">Web Design</option>
-		<option value="brand_identity_design">Brand Identity Design</option>
-		<option value="motion_graphics">Motion Graphics</option>
-		<option value="photography">Photography</option>
-	</select></p>
-	<p> + Type
-	<select name="post_project">
-		<option value="work">Work</option>
-		<option value="personal">Personal</option>
-	</select></p>
-	<p><input type="text" name="post_title" placeholder="Title"></p>
-	<p><textarea name="post_content" placeholder="Content"></textarea></p>
-	<input type="submit" value="Add">
-</form>
+<div class="row">
+	<form action="/uploads/write_complete" method="post" enctype="multipart/form-data">
+		<p>+ File
+		<p><input type="file" name="image"><p>
+		</p>
+		<p> + Dimension
+		<select name="post_dimension">
+			<option value="2D">2D</option>
+			<option value="3D">3D</option>
+		</select></p>
+		<p> + Category
+		<select name="post_category">
+			<option value="illustration">Illustration</option>
+			<option value="web_design">Web Design</option>
+			<option value="brand_identity_design">Brand Identity Design</option>
+			<option value="motion_graphics">Motion Graphics</option>
+			<option value="photography">Photography</option>
+		</select></p>
+		<p> + Type
+		<select name="post_project">
+			<option value="work">Work</option>
+			<option value="personal">Personal</option>
+		</select></p>
+		<p><input type="text" name="post_title" placeholder="Title"></p>
+		<p><textarea name="post_content" placeholder="Content"></textarea></p>
+		<input type="submit" value="Add">
+	</form>
+</div>

@@ -4,5 +4,6 @@ class Post < ActiveRecord::Base
 	validates :project,  :inclusion => { :in => ["work", "personal"] }
 	validates :title, :presence => { :message => "Title Required." }
 	validates :title, :uniqueness => { :message => "Post by the same name already exists." }
+	
 	mount_uploader :image, ImageUploader
 end
