@@ -1,15 +1,12 @@
-<% @posts.reverse.each do |post| %>
-<div>
-	<div class="row">
-		<a href="/uploads/show/<%= post.id %>">
-			<img class="thumb" src="<%= post.image_url(:thumb) %>">
-			<div>
-				<h4 class="title"><%= post.title %><h4></a>
-				<h4><%= post.dimension %> <%= post.category %> | <%= post.project %></h4>
-			</div>
+<div class="row">
+	<% @posts.reverse.each do |post| %>
+		<div class="block">
+			<a href="/uploads/show/<%= post.id %>">
+				<img class="thumb" src="<%= post.image_url(:thumb) %>">
+				<h4><%= post.title %><h4></a>
+				<h4><%= post.dimension %> <%= post.category %> | <%= post.project %></h4>	
 		</div>
-	</div>
+	<% end %>
 </div>
-<% end %>
 
 
